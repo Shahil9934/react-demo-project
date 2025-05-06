@@ -14,9 +14,19 @@ const Home = () => {
       dispatch(getProducts())
     },[])
     return(
-        <>
-         <h5>Home Component</h5>
-        </>
+        <div className="grid-container">
+        {product.map((prod) => {
+          return(
+            <div className="card">
+             <img className="card img " src={prod.image} alt="Avatar" style= {{width:"100%"}} />
+            <div className="container">
+             <h4><b>John Doe</b></h4> 
+               <p>{prod.category}</p> 
+             </div>
+          </div>
+          )
+        })}
+        </div>
     )
 }
 
