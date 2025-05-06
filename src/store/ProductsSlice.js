@@ -22,15 +22,13 @@ export default ProductsSlice.reducer;
 
 
 export const getProducts = () => {
-    try {
-        return async function(dispatch,getState){
-            const productResponse = await fetch("https://fakestoreapi.com/products")
-            const productJson = await productResponse.json()
-             dispatch(setProducts(productJson))
-         }
-        
-    } catch (error) {
-        console.log("error",error)
-    }
-   
-}
+    return async function (dispatch, getState) {
+        try {
+            const productResponse = await fetch("https://fakestoreapi.com/products");
+            const productJson = await productResponse.json();
+            dispatch(setProducts(productJson));
+        } catch (error) {
+            console.log("error", error);
+        }
+    };
+};

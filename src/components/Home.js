@@ -12,12 +12,12 @@ const Home = () => {
 
     useEffect(() => {
       dispatch(getProducts())
-    },[])
+    },[dispatch])
     return(
         <div className="grid-container">
         {product.map((prod) => {
           return(
-            <div className="card">
+            <div className="card" key={prod.id}>
              <img className="card img " src={prod.image} alt="Avatar" style= {{width:"100%"}} />
             <div className="container">
              <h4><b>John Doe</b></h4> 
