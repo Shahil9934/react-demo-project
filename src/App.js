@@ -1,9 +1,12 @@
+import { Provider } from "react-redux";
+import Store from "./store/Store";
+import Home from "./components/Home";
+
 const App = () => {
   return(
-    <div>
-      <h5>App component</h5>
-      <h5>New project</h5>
-    </div>
+    <Provider store={Store}>
+      <Home/>
+    </Provider>
   )
 }
 
