@@ -40,7 +40,7 @@ function Home(){
             <div className="card" key={prod.id}>
              <img className="card img " src={prod.image} alt="Avatar" style= {{width:"100%"}} />
             <div className="container">
-               <h6><b>{prod.price}</b></h6> 
+               <h6><b>{`Price ${prod.price}`}</b></h6> 
              <h6><b>{prod.title}</b></h6> 
                <p>{prod.category}</p> 
              </div>
