@@ -8,7 +8,7 @@
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
   gap: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 40px;
 }
 
 .card {
@@ -31,4 +31,9 @@
 .container {
   padding: 16px;
   flex: 1; /* Allow content to grow */
+}
+
+.nav{
+  width: 200px;
+  height: 40px;
 }

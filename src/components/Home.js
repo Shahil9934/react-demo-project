@@ -2,17 +2,37 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../store/ProductsSlice";
 
-const Home = () => {
+function Home(){
 
     const dispatch = useDispatch()
-
     const product = useSelector((state) => state.data)
-
     console.log(product)
 
     useEffect(() => {
       dispatch(getProducts())
     },[dispatch])
+
+    function sum(){
+      const obj = {};
+
+      return function(a,b){
+        console.log('obj is :', obj)
+        if(!obj[`${a},${b}`]){
+          console.log("inside if");
+          obj[`${a},${b}`] = a + b
+        }
+        return obj[`${a},${b}`]
+      }
+    }
+
+   
+   const memoizedSum = sum();
+
+   console.log(memoizedSum(3,4))
+   console.log(memoizedSum(3,4))
+    
+
+  
     return(
         <div className="grid-container">
         {product.map((prod) => {
